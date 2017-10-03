@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on With no power comes no responsibility</title>
+    <link>https://blog.sonicgd.ru/categories/</link>
+    <description>Recent content in Categories on With no power comes no responsibility</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    
+	<atom:link href="https://blog.sonicgd.ru/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Php vs C#</title>
+      <link>https://blog.sonicgd.ru/categories/php-vs-c#/</link>
+      <pubDate>Thu, 23 Mar 2017 13:03:11 +0000</pubDate>
+      
+      <guid>https://blog.sonicgd.ru/categories/php-vs-c#/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
