@@ -13,10 +13,10 @@
     
     <item>
       <title>Про полиморфизм</title>
-      <link>https://blog.sonicgd.ru/2017/03/23/polymorphism/</link>
+      <link>https://blog.sonicgd.ru/2017/10/03/polymorphism/</link>
       <pubDate>Tue, 03 Oct 2017 15:30:15 +0500</pubDate>
       
-      <guid>https://blog.sonicgd.ru/2017/03/23/polymorphism/</guid>
+      <guid>https://blog.sonicgd.ru/2017/10/03/polymorphism/</guid>
       <description>&lt;p&gt;После PHP в C# не сразу очевидно как работает переопределение методов при наследовании. В PHP всё просто:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;s1770&#34;&gt;&amp;lt;?php&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt;
 &lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt;
