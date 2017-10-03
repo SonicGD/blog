@@ -12,7 +12,7 @@ pygmentCodeFences = true
 publishDir = "docs"
 
 [Params]
-  subtitle = "With no power comes no responsibility"
+  subtitle = ""
   logo = "logo.png"
   favicon = "favicon.ico"
   dateFormat = "January 2, 2006"
