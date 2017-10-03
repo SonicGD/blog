@@ -317,12 +317,12 @@ class Foo {
 </span><span class="s1f40">    }
 </span><span class="s1f40">}</span></code></pre>
 </div>
-<p>Не так как в PHP. Более того. Попутно мы ещё и получим предупреждение от компилятора:</p>
+<p>Не так как в PHP. Более того, попутно мы ещё и получим предупреждение от компилятора:</p>
 
 <pre><code>warning CS0108: 'Bar.Test()' hides inherited member 'Foo.Test()'. Use the new keyword if hiding was intended.
 </code></pre>
 
-<p>Переопределив метод таким образом мы на самом деле просто &ldquo;скрыли&rdquo; его, однако методы базового класса по прежнему будет видеть и обращаться именно к базовой реализации. Новый же метод будет доступен только для членов класса <code>Bar</code> и при вызове у объекта класса <code>Bar</code>. То есть если мы приведём <code>Bar</code> к <code>Foo</code>, то вызовется так же, базовый метод:</p>
+<p>Переопределив метод таким образом, мы на самом деле просто &ldquo;скрыли&rdquo; его в классе-наследнике, однако методы базового класса по прежнему будут видеть и обращаться именно к базовой реализации. Новый же метод будет доступен только для членов класса <code>Bar</code> и при вызове у объекта класса <code>Bar</code>. То есть, если мы приведём <code>Bar</code> к <code>Foo</code>, то вызовется именно базовый метод:</p>
 <div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="s1f40">class Program
 </span><span class="s1f40">{
 </span><span class="s1f40">    static void Main(string[] args)
@@ -335,14 +335,17 @@ class Foo {
 </span><span class="s1f40">}</span></code></pre>
 </div>
 <p>Комплиятор подсказывает нам, что если такое поведение было задумано, то стоит явно об этом сообщить, добавив к методу ключевое слово <code>new</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="s1f40">public new void Test()
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="s1f40">class Bar : Foo
 </span><span class="s1f40">{
-</span><span class="s1f40">    Console.WriteLine(&#34;Bar&#34;);
+</span><span class="s1f40">    public new void Test()
+</span><span class="s1f40">    {
+</span><span class="s1f40">        Console.WriteLine(&#34;Bar&#34;);
+</span><span class="s1f40">    }
 </span><span class="s1f40">}</span></code></pre>
 </div>
 <p>Всё продолжит работать как работало, просто исчезнет предупреждение. Однако, что если мы хотим именно переопределить метод? Ну, как в старом добром PHP? Здесь нам помогут ключевые слова <code>virtual</code> и <code>override</code>.</p>
 
-<p>Чтобы сделать метод переопределяемым - надо пометить его как <code>virtual</code>:</p>
+<p>Чтобы сделать метод переопределяемым — надо пометить его как <code>virtual</code>:</p>
 <div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="s1f40">class Foo
 </span><span class="s1f40">{
 </span><span class="s1f40">    public virtual void Test()
@@ -356,7 +359,7 @@ class Foo {
 </span><span class="s1f40">    }
 </span><span class="s1f40">}</span></code></pre>
 </div>
-<p>Чтобы переопределить метод - надо пометить новый метод как <code>override</code>:</p>
+<p>Чтобы переопределить метод — надо пометить новый метод как <code>override</code>:</p>
 <div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="s1f40">class Bar : Foo
 </span><span class="s1f40">{
 </span><span class="s1f40">    public override void Test()
@@ -382,7 +385,7 @@ class Foo {
 </span><span class="s1f40">    }
 </span><span class="s1f40">}</span></code></pre>
 </div>
-<p>Вот, теперь всё именно так, как мы и хотели - новый метод полностью подменил старый. Создав объект класса <code>Bar</code> мы всегда будем вызывать новую реализацию.</p>
+<p>Вот, теперь всё именно так, как мы и хотели — новый метод полностью подменил старый. Создав объект класса <code>Bar</code> мы всегда будем вызывать новую реализацию.</p>
       </article>
 
       <ul class="pager blog-pager">
