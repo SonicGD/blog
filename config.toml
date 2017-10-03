@@ -9,7 +9,6 @@ pygmentsUseClasses = true
 pygmentCodeFences = true
 #disqusShortname = "XXX"
 #googleAnalytics = "XXX"
-
 publishDir = "docs"
 
 [Params]
