@@ -64,7 +64,7 @@ use …">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
   <link rel="stylesheet" href="https://blog.sonicgd.ru/css/pygment_highlights.css" />
-  <link rel="stylesheet" href="https://blog.sonicgd.ru/css/highlight.min.css" />
+  <link rel="stylesheet" href="https://blog.sonicgd.ru/css/highlight.min.css" /><link rel="stylesheet" href="https://blog.sonicgd.ru/js/styles/solarized-dark.css" />
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
@@ -211,16 +211,16 @@ use …">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
         <p>Заметил, что очень нравится то, что в C# можно импортировать namespace целиком.</p>
-<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="s1f40">using My.Super.NameSpace;</span></code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp">using My.Super.NameSpace;</code></pre>
 </div>
 <p>В PHP, к сожалению, мы вынуждены импортировать каждый класс по отдельности.</p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="s1770">&lt;?php</span><span class="s1f40">
-</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s3e8">use</span><span class="s1f40"> </span><span class="s7df">my\super\namespace\Foo</span><span class="s1388">;</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s3e8">use</span><span class="s1f40"> </span><span class="s7df">my\super\namespace\Bar</span><span class="s1388">;</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s3e8">use</span><span class="s1f40"> </span><span class="s7df">my\super\namespace\FooBar</span><span class="s1388">;</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="sfa0">...</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s3e8">use</span><span class="s1f40"> </span><span class="s7df">my\super\namespace\FooBar83</span><span class="s1388">;</span></code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="s17d4">&lt;?php</span>
+
+<span class="s3e8">use</span> my\super\namespace\Foo;
+<span class="s3e8">use</span> my\super\namespace\Bar;
+<span class="s3e8">use</span> my\super\namespace\FooBar;
+...
+<span class="s3e8">use</span> my\super\namespace\FooBar83;</code></pre>
 </div>
 <p>В итоге имеем десятки импортов, которые можно было бы заменить одним.
 </p>

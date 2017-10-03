@@ -121,7 +121,7 @@ public class Foo {
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
   <link rel="stylesheet" href="https://blog.sonicgd.ru/css/pygment_highlights.css" />
-  <link rel="stylesheet" href="https://blog.sonicgd.ru/css/highlight.min.css" />
+  <link rel="stylesheet" href="https://blog.sonicgd.ru/css/highlight.min.css" /><link rel="stylesheet" href="https://blog.sonicgd.ru/js/styles/solarized-dark.css" />
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
@@ -268,45 +268,45 @@ public class Foo {
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
         <p>В C# есть такая удобная штука как авто-свойства. Выглядит так:</p>
-<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="s1f40">public class Foo { 
-</span><span class="s1f40">   public List&lt;string&gt; Bar {get; set; }
-</span><span class="s1f40">}</span></code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp">public class Foo { 
+   public List&lt;string&gt; Bar {get; set; }
+}</code></pre>
 </div>
 <p>С их помощью можно удобно ограничивать доступ к свойствам без уродливых геттеров/сеттеров.</p>
 
 <p>Можно так:</p>
-<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="s1f40">public class Foo { 
-</span><span class="s1f40">   public List&lt;string&gt; Bar {get; private set; } //установить можно только внутри класса
-</span><span class="s1f40">}</span></code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp">public class Foo { 
+   public List&lt;string&gt; Bar {get; private set; } //установить можно только внутри класса
+}</code></pre>
 </div>
 <p>Или так:</p>
-<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="s1f40">public class Foo { 
-</span><span class="s1f40">   public List&lt;string&gt; Bar {get; } //read-only, выставить значение можно только в конструкторе
-</span><span class="s1f40">}</span></code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp">public class Foo { 
+   public List&lt;string&gt; Bar {get; } //read-only, выставить значение можно только в конструкторе
+}</code></pre>
 </div>
 <p>Также можно использовать как синтаксический сахар для геттеров/сеттеров:</p>
-<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="s1f40">public class Foo
-</span><span class="s1f40">{
-</span><span class="s1f40">    private string _barJson;
-</span><span class="s1f40">
-</span><span class="s1f40">    public List&lt;string&gt; Bar
-</span><span class="s1f40">    {
-</span><span class="s1f40">        get { return JsonConvert.DeserializeObject&lt;List&lt;string&gt;&gt;(_barJson); }
-</span><span class="s1f40">        set { _barJson = JsonConvert.SerializeObject(value); }
-</span><span class="s1f40">    }
-</span><span class="s1f40">}</span></code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp">public class Foo
+{
+    private string _barJson;
+
+    public List&lt;string&gt; Bar
+    {
+        get { return JsonConvert.DeserializeObject&lt;List&lt;string&gt;&gt;(_barJson); }
+        set { _barJson = JsonConvert.SerializeObject(value); }
+    }
+}</code></pre>
 </div>
 <p>Или даже так:</p>
-<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="s1f40">public class Foo
-</span><span class="s1f40">{
-</span><span class="s1f40">    private string _barJson;
-</span><span class="s1f40">
-</span><span class="s1f40">    public List&lt;string&gt; Bar
-</span><span class="s1f40">    {
-</span><span class="s1f40">        get =&gt; JsonConvert.DeserializeObject&lt;List&lt;string&gt;&gt;(_barJson);
-</span><span class="s1f40">        set =&gt; _barJson = JsonConvert.SerializeObject(value);
-</span><span class="s1f40">    }
-</span><span class="s1f40">}</span></code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp">public class Foo
+{
+    private string _barJson;
+
+    public List&lt;string&gt; Bar
+    {
+        get =&gt; JsonConvert.DeserializeObject&lt;List&lt;string&gt;&gt;(_barJson);
+        set =&gt; _barJson = JsonConvert.SerializeObject(value);
+    }
+}</code></pre>
 </div>
 <p>Очень удобная вещь. Её нехватает в PHP.
 </p>

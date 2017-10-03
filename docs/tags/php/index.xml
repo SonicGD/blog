@@ -18,16 +18,16 @@
       
       <guid>https://blog.sonicgd.ru/2017/02/22/%D0%BF%D1%80%D0%BE-%D0%BD%D0%B5%D0%B9%D0%BC%D1%81%D0%BF%D0%B5%D0%B9%D1%81%D1%8B/</guid>
       <description>&lt;p&gt;Заметил, что очень нравится то, что в C# можно импортировать namespace целиком.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-csharp&#34; data-lang=&#34;csharp&#34;&gt;&lt;span class=&#34;s1f40&#34;&gt;using My.Super.NameSpace;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-csharp&#34; data-lang=&#34;csharp&#34;&gt;using My.Super.NameSpace;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;В PHP, к сожалению, мы вынуждены импортировать каждый класс по отдельности.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;s1770&#34;&gt;&amp;lt;?php&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt;&lt;/span&gt;&lt;span class=&#34;s3e8&#34;&gt;use&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s7df&#34;&gt;my\super\namespace\Foo&lt;/span&gt;&lt;span class=&#34;s1388&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt;&lt;/span&gt;&lt;span class=&#34;s3e8&#34;&gt;use&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s7df&#34;&gt;my\super\namespace\Bar&lt;/span&gt;&lt;span class=&#34;s1388&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt;&lt;/span&gt;&lt;span class=&#34;s3e8&#34;&gt;use&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s7df&#34;&gt;my\super\namespace\FooBar&lt;/span&gt;&lt;span class=&#34;s1388&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sfa0&#34;&gt;...&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt;&lt;/span&gt;&lt;span class=&#34;s3e8&#34;&gt;use&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s7df&#34;&gt;my\super\namespace\FooBar83&lt;/span&gt;&lt;span class=&#34;s1388&#34;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;s17d4&#34;&gt;&amp;lt;?php&lt;/span&gt;
+
+&lt;span class=&#34;s3e8&#34;&gt;use&lt;/span&gt; my\super\namespace\Foo;
+&lt;span class=&#34;s3e8&#34;&gt;use&lt;/span&gt; my\super\namespace\Bar;
+&lt;span class=&#34;s3e8&#34;&gt;use&lt;/span&gt; my\super\namespace\FooBar;
+...
+&lt;span class=&#34;s3e8&#34;&gt;use&lt;/span&gt; my\super\namespace\FooBar83;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;В итоге имеем десятки импортов, которые можно было бы заменить одним.
 &lt;/p&gt;</description>

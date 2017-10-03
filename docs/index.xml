@@ -6,10 +6,50 @@
     <description>Recent content on With no power comes no responsibility</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Thu, 23 Mar 2017 13:03:11 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 03 Oct 2017 15:30:15 +0500</lastBuildDate>
     
 	<atom:link href="https://blog.sonicgd.ru/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Про полиморфизм</title>
+      <link>https://blog.sonicgd.ru/2017-10-03-polymorphism/</link>
+      <pubDate>Tue, 03 Oct 2017 15:30:15 +0500</pubDate>
+      
+      <guid>https://blog.sonicgd.ru/2017-10-03-polymorphism/</guid>
+      <description>&lt;p&gt;После PHP в C# не сразу очевидно как работает переопределение методов при наследовании. В PHP всё просто:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;s17d4&#34;&gt;&amp;lt;?php&lt;/span&gt;
+
+&lt;span class=&#34;s3e8&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;s7d4&#34;&gt;Foo&lt;/span&gt; {
+    &lt;span class=&#34;s3e8&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;s3e8&#34;&gt;function&lt;/span&gt; test()
+    {
+        &lt;span class=&#34;s3e8&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;sc1c&#34;&gt;&amp;#39;Foo&amp;#39;&lt;/span&gt;;
+    }
+    
+    &lt;span class=&#34;s3e8&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;s3e8&#34;&gt;function&lt;/span&gt; proxyTest()
+    {
+        $this-&amp;gt;test();
+    }
+}
+
+&lt;span class=&#34;s3e8&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;s7d4&#34;&gt;Bar&lt;/span&gt; &lt;span class=&#34;s3e8&#34;&gt;extends&lt;/span&gt; Foo {
+    &lt;span class=&#34;s3e8&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;s3e8&#34;&gt;function&lt;/span&gt; test()
+    {
+        &lt;span class=&#34;s3e8&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;sc1c&#34;&gt;&amp;#39;Bar&amp;#39;&lt;/span&gt;;
+    }
+}
+
+$foo = &lt;span class=&#34;s3e8&#34;&gt;new&lt;/span&gt; Foo();
+$foo-&amp;gt;test(); &lt;span class=&#34;s1770&#34;&gt;//Foo
+&lt;/span&gt;&lt;span class=&#34;s1770&#34;&gt;&lt;/span&gt;$foo-&amp;gt;proxyTest(); &lt;span class=&#34;s1770&#34;&gt;//Foo
+&lt;/span&gt;&lt;span class=&#34;s1770&#34;&gt;&lt;/span&gt;
+$bar = &lt;span class=&#34;s3e8&#34;&gt;new&lt;/span&gt; Bar();
+$bar-&amp;gt;test(); &lt;span class=&#34;s1770&#34;&gt;//Bar
+&lt;/span&gt;&lt;span class=&#34;s1770&#34;&gt;&lt;/span&gt;$bar-&amp;gt;proxyTest(); //Bar&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Переопределённый метод заменяет реализацию базового класса целиком и полностью. В C# всё немного веселее.
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Авто-свойства</title>
@@ -18,45 +58,45 @@
       
       <guid>https://blog.sonicgd.ru/2017/03/23/%D0%B0%D0%B2%D1%82%D0%BE-%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2%D0%B0/</guid>
       <description>&lt;p&gt;В C# есть такая удобная штука как авто-свойства. Выглядит так:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-csharp&#34; data-lang=&#34;csharp&#34;&gt;&lt;span class=&#34;s1f40&#34;&gt;public class Foo { 
-&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt;   public List&amp;lt;string&amp;gt; Bar {get; set; }
-&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-csharp&#34; data-lang=&#34;csharp&#34;&gt;public class Foo { 
+   public List&amp;lt;string&amp;gt; Bar {get; set; }
+}&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;С их помощью можно удобно ограничивать доступ к свойствам без уродливых геттеров/сеттеров.&lt;/p&gt;
 
 &lt;p&gt;Можно так:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-csharp&#34; data-lang=&#34;csharp&#34;&gt;&lt;span class=&#34;s1f40&#34;&gt;public class Foo { 
-&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt;   public List&amp;lt;string&amp;gt; Bar {get; private set; } //установить можно только внутри класса
-&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-csharp&#34; data-lang=&#34;csharp&#34;&gt;public class Foo { 
+   public List&amp;lt;string&amp;gt; Bar {get; private set; } //установить можно только внутри класса
+}&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;Или так:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-csharp&#34; data-lang=&#34;csharp&#34;&gt;&lt;span class=&#34;s1f40&#34;&gt;public class Foo { 
-&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt;   public List&amp;lt;string&amp;gt; Bar {get; } //read-only, выставить значение можно только в конструкторе
-&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-csharp&#34; data-lang=&#34;csharp&#34;&gt;public class Foo { 
+   public List&amp;lt;string&amp;gt; Bar {get; } //read-only, выставить значение можно только в конструкторе
+}&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;Также можно использовать как синтаксический сахар для геттеров/сеттеров:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-csharp&#34; data-lang=&#34;csharp&#34;&gt;&lt;span class=&#34;s1f40&#34;&gt;public class Foo
-&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt;{
-&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt;    private string _barJson;
-&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt;    public List&amp;lt;string&amp;gt; Bar
-&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt;    {
-&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt;        get { return JsonConvert.DeserializeObject&amp;lt;List&amp;lt;string&amp;gt;&amp;gt;(_barJson); }
-&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt;        set { _barJson = JsonConvert.SerializeObject(value); }
-&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt;    }
-&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-csharp&#34; data-lang=&#34;csharp&#34;&gt;public class Foo
+{
+    private string _barJson;
+
+    public List&amp;lt;string&amp;gt; Bar
+    {
+        get { return JsonConvert.DeserializeObject&amp;lt;List&amp;lt;string&amp;gt;&amp;gt;(_barJson); }
+        set { _barJson = JsonConvert.SerializeObject(value); }
+    }
+}&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;Или даже так:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-csharp&#34; data-lang=&#34;csharp&#34;&gt;&lt;span class=&#34;s1f40&#34;&gt;public class Foo
-&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt;{
-&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt;    private string _barJson;
-&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt;    public List&amp;lt;string&amp;gt; Bar
-&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt;    {
-&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt;        get =&amp;gt; JsonConvert.DeserializeObject&amp;lt;List&amp;lt;string&amp;gt;&amp;gt;(_barJson);
-&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt;        set =&amp;gt; _barJson = JsonConvert.SerializeObject(value);
-&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt;    }
-&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-csharp&#34; data-lang=&#34;csharp&#34;&gt;public class Foo
+{
+    private string _barJson;
+
+    public List&amp;lt;string&amp;gt; Bar
+    {
+        get =&amp;gt; JsonConvert.DeserializeObject&amp;lt;List&amp;lt;string&amp;gt;&amp;gt;(_barJson);
+        set =&amp;gt; _barJson = JsonConvert.SerializeObject(value);
+    }
+}&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;Очень удобная вещь. Её нехватает в PHP.
 &lt;/p&gt;</description>
@@ -69,16 +109,16 @@
       
       <guid>https://blog.sonicgd.ru/2017/02/22/%D0%BF%D1%80%D0%BE-%D0%BD%D0%B5%D0%B9%D0%BC%D1%81%D0%BF%D0%B5%D0%B9%D1%81%D1%8B/</guid>
       <description>&lt;p&gt;Заметил, что очень нравится то, что в C# можно импортировать namespace целиком.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-csharp&#34; data-lang=&#34;csharp&#34;&gt;&lt;span class=&#34;s1f40&#34;&gt;using My.Super.NameSpace;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-csharp&#34; data-lang=&#34;csharp&#34;&gt;using My.Super.NameSpace;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;В PHP, к сожалению, мы вынуждены импортировать каждый класс по отдельности.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;s1770&#34;&gt;&amp;lt;?php&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt;&lt;/span&gt;&lt;span class=&#34;s3e8&#34;&gt;use&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s7df&#34;&gt;my\super\namespace\Foo&lt;/span&gt;&lt;span class=&#34;s1388&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt;&lt;/span&gt;&lt;span class=&#34;s3e8&#34;&gt;use&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s7df&#34;&gt;my\super\namespace\Bar&lt;/span&gt;&lt;span class=&#34;s1388&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt;&lt;/span&gt;&lt;span class=&#34;s3e8&#34;&gt;use&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s7df&#34;&gt;my\super\namespace\FooBar&lt;/span&gt;&lt;span class=&#34;s1388&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sfa0&#34;&gt;...&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt;&lt;/span&gt;&lt;span class=&#34;s3e8&#34;&gt;use&lt;/span&gt;&lt;span class=&#34;s1f40&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s7df&#34;&gt;my\super\namespace\FooBar83&lt;/span&gt;&lt;span class=&#34;s1388&#34;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;s17d4&#34;&gt;&amp;lt;?php&lt;/span&gt;
+
+&lt;span class=&#34;s3e8&#34;&gt;use&lt;/span&gt; my\super\namespace\Foo;
+&lt;span class=&#34;s3e8&#34;&gt;use&lt;/span&gt; my\super\namespace\Bar;
+&lt;span class=&#34;s3e8&#34;&gt;use&lt;/span&gt; my\super\namespace\FooBar;
+...
+&lt;span class=&#34;s3e8&#34;&gt;use&lt;/span&gt; my\super\namespace\FooBar83;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;В итоге имеем десятки импортов, которые можно было бы заменить одним.
 &lt;/p&gt;</description>
