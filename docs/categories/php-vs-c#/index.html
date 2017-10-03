@@ -158,7 +158,7 @@
         <div class="posts-list">
           
             <article class="post-preview">
-              <a href="https://blog.sonicgd.ru/2017-10-03-polymorphism/">
+              <a href="https://blog.sonicgd.ru/2017/03/23/polymorphism/">
                 <h2 class="post-title">Про полиморфизм</h2>
 
                 
@@ -170,38 +170,38 @@
               <div class="post-entry">
                 
                   <p>После PHP в C# не сразу очевидно как работает переопределение методов при наследовании. В PHP всё просто:</p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="s17d4">&lt;?php</span>
-
-<span class="s3e8">class</span> <span class="s7d4">Foo</span> {
-    <span class="s3e8">public</span> <span class="s3e8">function</span> test()
-    {
-        <span class="s3e8">echo</span> <span class="sc1c">&#39;Foo&#39;</span>;
-    }
-    
-    <span class="s3e8">public</span> <span class="s3e8">function</span> proxyTest()
-    {
-        $this-&gt;test();
-    }
-}
-
-<span class="s3e8">class</span> <span class="s7d4">Bar</span> <span class="s3e8">extends</span> Foo {
-    <span class="s3e8">public</span> <span class="s3e8">function</span> test()
-    {
-        <span class="s3e8">echo</span> <span class="sc1c">&#39;Bar&#39;</span>;
-    }
-}
-
-$foo = <span class="s3e8">new</span> Foo();
-$foo-&gt;test(); <span class="s1770">//Foo
-</span><span class="s1770"></span>$foo-&gt;proxyTest(); <span class="s1770">//Foo
-</span><span class="s1770"></span>
-$bar = <span class="s3e8">new</span> Bar();
-$bar-&gt;test(); <span class="s1770">//Bar
-</span><span class="s1770"></span>$bar-&gt;proxyTest(); //Bar</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="s1770">&lt;?php</span><span class="s1f40">
+</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s3e8">class</span><span class="s1f40"> </span><span class="s7d4">Foo</span><span class="s1f40"> </span><span class="s1388">{</span><span class="s1f40">
+</span><span class="s1f40">    </span><span class="s3e8">public</span><span class="s1f40"> </span><span class="s3e8">function</span><span class="s1f40"> </span><span class="sfa0"></span><span class="s1f40"></span><span class="s7d9">test</span><span class="s1388">()</span><span class="s1f40">
+</span><span class="s1f40">    </span><span class="s1388">{</span><span class="s1f40">
+</span><span class="s1f40">        </span><span class="s3e8">echo</span><span class="s1f40"> </span><span class="sc1c">&#39;Foo&#39;</span><span class="s1388">;</span><span class="s1f40">
+</span><span class="s1f40">    </span><span class="s1388">}</span><span class="s1f40">
+</span><span class="s1f40">    
+</span><span class="s1f40">    </span><span class="s3e8">public</span><span class="s1f40"> </span><span class="s3e8">function</span><span class="s1f40"> </span><span class="sfa0"></span><span class="s1f40"></span><span class="s7d9">proxyTest</span><span class="s1388">()</span><span class="s1f40">
+</span><span class="s1f40">    </span><span class="s1388">{</span><span class="s1f40">
+</span><span class="s1f40">        </span><span class="s7d0">$this</span><span class="sfa0">-&gt;</span><span class="s1f40"></span><span class="s7d1">test</span><span class="s1388">();</span><span class="s1f40">
+</span><span class="s1f40">    </span><span class="s1388">}</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s1388">}</span><span class="s1f40">
+</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s3e8">class</span><span class="s1f40"> </span><span class="s7d4">Bar</span><span class="s1f40"> </span><span class="s3e8">extends</span><span class="s1f40"> </span><span class="s7df">Foo</span><span class="s1f40"> </span><span class="s1388">{</span><span class="s1f40">
+</span><span class="s1f40">    </span><span class="s3e8">public</span><span class="s1f40"> </span><span class="s3e8">function</span><span class="s1f40"> </span><span class="sfa0"></span><span class="s1f40"></span><span class="s7d9">test</span><span class="s1388">()</span><span class="s1f40">
+</span><span class="s1f40">    </span><span class="s1388">{</span><span class="s1f40">
+</span><span class="s1f40">        </span><span class="s3e8">echo</span><span class="s1f40"> </span><span class="sc1c">&#39;Bar&#39;</span><span class="s1388">;</span><span class="s1f40">
+</span><span class="s1f40">    </span><span class="s1388">}</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s1388">}</span><span class="s1f40">
+</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s7d0">$foo</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s3e8">new</span><span class="s1f40"> </span><span class="s7df">Foo</span><span class="s1388">();</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s7d0">$foo</span><span class="sfa0">-&gt;</span><span class="s1f40"></span><span class="s7d1">test</span><span class="s1388">();</span><span class="s1f40"> </span><span class="s1770">//Foo
+</span><span class="s1770"></span><span class="s7d0">$foo</span><span class="sfa0">-&gt;</span><span class="s1f40"></span><span class="s7d1">proxyTest</span><span class="s1388">();</span><span class="s1f40"> </span><span class="s1770">//Foo
+</span><span class="s1770"></span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s7d0">$bar</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s3e8">new</span><span class="s1f40"> </span><span class="s7df">Bar</span><span class="s1388">();</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s7d0">$bar</span><span class="sfa0">-&gt;</span><span class="s1f40"></span><span class="s7d1">test</span><span class="s1388">();</span><span class="s1f40"> </span><span class="s1770">//Bar
+</span><span class="s1770"></span><span class="s7d0">$bar</span><span class="sfa0">-&gt;</span><span class="s1f40"></span><span class="s7d1">proxyTest</span><span class="s1388">();</span><span class="s1f40"> </span><span class="sfa0">//</span><span class="s7df">Bar</span></code></pre>
 </div>
 <p>Переопределённый метод заменяет реализацию базового класса целиком и полностью. В C# всё немного веселее.
 </p>
-                  <a href="https://blog.sonicgd.ru/2017-10-03-polymorphism/" class="post-read-more">[Read More]</a>
+                  <a href="https://blog.sonicgd.ru/2017/03/23/polymorphism/" class="post-read-more">[Read More]</a>
                 
               </div>
 
@@ -222,45 +222,45 @@ $bar-&gt;test(); <span class="s1770">//Bar
               <div class="post-entry">
                 
                   <p>В C# есть такая удобная штука как авто-свойства. Выглядит так:</p>
-<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp">public class Foo { 
-   public List&lt;string&gt; Bar {get; set; }
-}</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="s1f40">public class Foo { 
+</span><span class="s1f40">   public List&lt;string&gt; Bar {get; set; }
+</span><span class="s1f40">}</span></code></pre>
 </div>
 <p>С их помощью можно удобно ограничивать доступ к свойствам без уродливых геттеров/сеттеров.</p>
 
 <p>Можно так:</p>
-<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp">public class Foo { 
-   public List&lt;string&gt; Bar {get; private set; } //установить можно только внутри класса
-}</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="s1f40">public class Foo { 
+</span><span class="s1f40">   public List&lt;string&gt; Bar {get; private set; } //установить можно только внутри класса
+</span><span class="s1f40">}</span></code></pre>
 </div>
 <p>Или так:</p>
-<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp">public class Foo { 
-   public List&lt;string&gt; Bar {get; } //read-only, выставить значение можно только в конструкторе
-}</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="s1f40">public class Foo { 
+</span><span class="s1f40">   public List&lt;string&gt; Bar {get; } //read-only, выставить значение можно только в конструкторе
+</span><span class="s1f40">}</span></code></pre>
 </div>
 <p>Также можно использовать как синтаксический сахар для геттеров/сеттеров:</p>
-<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp">public class Foo
-{
-    private string _barJson;
-
-    public List&lt;string&gt; Bar
-    {
-        get { return JsonConvert.DeserializeObject&lt;List&lt;string&gt;&gt;(_barJson); }
-        set { _barJson = JsonConvert.SerializeObject(value); }
-    }
-}</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="s1f40">public class Foo
+</span><span class="s1f40">{
+</span><span class="s1f40">    private string _barJson;
+</span><span class="s1f40">
+</span><span class="s1f40">    public List&lt;string&gt; Bar
+</span><span class="s1f40">    {
+</span><span class="s1f40">        get { return JsonConvert.DeserializeObject&lt;List&lt;string&gt;&gt;(_barJson); }
+</span><span class="s1f40">        set { _barJson = JsonConvert.SerializeObject(value); }
+</span><span class="s1f40">    }
+</span><span class="s1f40">}</span></code></pre>
 </div>
 <p>Или даже так:</p>
-<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp">public class Foo
-{
-    private string _barJson;
-
-    public List&lt;string&gt; Bar
-    {
-        get =&gt; JsonConvert.DeserializeObject&lt;List&lt;string&gt;&gt;(_barJson);
-        set =&gt; _barJson = JsonConvert.SerializeObject(value);
-    }
-}</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="s1f40">public class Foo
+</span><span class="s1f40">{
+</span><span class="s1f40">    private string _barJson;
+</span><span class="s1f40">
+</span><span class="s1f40">    public List&lt;string&gt; Bar
+</span><span class="s1f40">    {
+</span><span class="s1f40">        get =&gt; JsonConvert.DeserializeObject&lt;List&lt;string&gt;&gt;(_barJson);
+</span><span class="s1f40">        set =&gt; _barJson = JsonConvert.SerializeObject(value);
+</span><span class="s1f40">    }
+</span><span class="s1f40">}</span></code></pre>
 </div>
 <p>Очень удобная вещь. Её нехватает в PHP.
 </p>
@@ -284,16 +284,16 @@ $bar-&gt;test(); <span class="s1770">//Bar
               <div class="post-entry">
                 
                   <p>Заметил, что очень нравится то, что в C# можно импортировать namespace целиком.</p>
-<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp">using My.Super.NameSpace;</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="s1f40">using My.Super.NameSpace;</span></code></pre>
 </div>
 <p>В PHP, к сожалению, мы вынуждены импортировать каждый класс по отдельности.</p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="s17d4">&lt;?php</span>
-
-<span class="s3e8">use</span> my\super\namespace\Foo;
-<span class="s3e8">use</span> my\super\namespace\Bar;
-<span class="s3e8">use</span> my\super\namespace\FooBar;
-...
-<span class="s3e8">use</span> my\super\namespace\FooBar83;</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="s1770">&lt;?php</span><span class="s1f40">
+</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s3e8">use</span><span class="s1f40"> </span><span class="s7df">my\super\namespace\Foo</span><span class="s1388">;</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s3e8">use</span><span class="s1f40"> </span><span class="s7df">my\super\namespace\Bar</span><span class="s1388">;</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s3e8">use</span><span class="s1f40"> </span><span class="s7df">my\super\namespace\FooBar</span><span class="s1388">;</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="sfa0">...</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s3e8">use</span><span class="s1f40"> </span><span class="s7df">my\super\namespace\FooBar83</span><span class="s1388">;</span></code></pre>
 </div>
 <p>В итоге имеем десятки импортов, которые можно было бы заменить одним.
 </p>

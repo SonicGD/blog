@@ -170,16 +170,16 @@
               <div class="post-entry">
                 
                   <p>Заметил, что очень нравится то, что в C# можно импортировать namespace целиком.</p>
-<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp">using My.Super.NameSpace;</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="s1f40">using My.Super.NameSpace;</span></code></pre>
 </div>
 <p>В PHP, к сожалению, мы вынуждены импортировать каждый класс по отдельности.</p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="s17d4">&lt;?php</span>
-
-<span class="s3e8">use</span> my\super\namespace\Foo;
-<span class="s3e8">use</span> my\super\namespace\Bar;
-<span class="s3e8">use</span> my\super\namespace\FooBar;
-...
-<span class="s3e8">use</span> my\super\namespace\FooBar83;</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="s1770">&lt;?php</span><span class="s1f40">
+</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s3e8">use</span><span class="s1f40"> </span><span class="s7df">my\super\namespace\Foo</span><span class="s1388">;</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s3e8">use</span><span class="s1f40"> </span><span class="s7df">my\super\namespace\Bar</span><span class="s1388">;</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s3e8">use</span><span class="s1f40"> </span><span class="s7df">my\super\namespace\FooBar</span><span class="s1388">;</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="sfa0">...</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s3e8">use</span><span class="s1f40"> </span><span class="s7df">my\super\namespace\FooBar83</span><span class="s1388">;</span></code></pre>
 </div>
 <p>В итоге имеем десятки импортов, которые можно было бы заменить одним.
 </p>
