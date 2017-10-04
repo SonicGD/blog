@@ -5,44 +5,65 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Про неймспейсы</title>
-  <meta property="og:title" content="Про неймспейсы" />
-  <meta name="twitter:title" content="Про неймспейсы" />
-  <meta name="description" content="Заметил, что очень нравится то, что в C# можно импортировать namespace целиком.
-using My.Super.NameSpace;
+  <title>Про интерфейсы</title>
+  <meta property="og:title" content="Про интерфейсы" />
+  <meta name="twitter:title" content="Про интерфейсы" />
+  <meta name="description" content="Реализация интефрейсов в C# тоже сделана не так прямолинейно как в PHP.
 
-В PHP, к сожалению, мы вынуждены импортировать каждый класс по отдельности.
-&lt;?php
+Типичный интерфейс:
+interface IFoo
+{
+    void Foo();
+}
 
-use my\super\namespace\Foo;
-use my\super\namespace\Bar;
-use my\super\namespace\FooBar;
-...
-use my\super\namespace\FooBar83;
+Обычная реализация выглядит так:
+class Foo : IFoo
+{
+    public void Foo()
+    {
+      Console.WriteLine(&#34;Foo&#34;);
+    }
+}
 
-В итоге имеем десятки импортов, которые можно было бы заменить одним.
-">
-  <meta property="og:description" content="Заметил, что очень нравится то, что в C# можно импортировать namespace целиком.
-using My.Super.NameSpace;
+И мы можем использовать класс вот так:
+var foo = new Foo();
+foo.Foo(); //работает
 
-В PHP, к сожалению, мы вынуждены импортировать каждый класс по отдельности.
-&lt;?php
+Совсем как PHP. Или нет?">
+  <meta property="og:description" content="Реализация интефрейсов в C# тоже сделана не так прямолинейно как в PHP.
 
-use my\super\namespace\Foo;
-use my\super\namespace\Bar;
-use my\super\namespace\FooBar;
-...
-use my\super\namespace\FooBar83;
+Типичный интерфейс:
+interface IFoo
+{
+    void Foo();
+}
 
-В итоге имеем десятки импортов, которые можно было бы заменить одним.
-">
-  <meta name="twitter:description" content="Заметил, что очень нравится то, что в C# можно импортировать namespace целиком.
-using My.Super.NameSpace;
+Обычная реализация выглядит так:
+class Foo : IFoo
+{
+    public void Foo()
+    {
+      Console.WriteLine(&#34;Foo&#34;);
+    }
+}
 
-В PHP, к сожалению, мы вынуждены импортировать каждый класс по отдельности.
-&lt;?php
+И мы можем использовать класс вот так:
+var foo = new Foo();
+foo.Foo(); //работает
 
-use …">
+Совсем как PHP. Или нет?">
+  <meta name="twitter:description" content="Реализация интефрейсов в C# тоже сделана не так прямолинейно как в PHP.
+
+Типичный интерфейс:
+interface IFoo
+{
+    void Foo();
+}
+
+Обычная реализация выглядит так:
+class Foo : IFoo
+{
+    public void …">
   <meta name="author" content="SonicGD"/>
   <link href='https://blog.sonicgd.ru/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="https://blog.sonicgd.ru/logo.png" />
@@ -50,12 +71,12 @@ use …">
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@sonicbw" />
   <meta name="twitter:creator" content="@sonicbw" />
-  <meta property="og:url" content="https://blog.sonicgd.ru/2017/02/22/%D0%BF%D1%80%D0%BE-%D0%BD%D0%B5%D0%B9%D0%BC%D1%81%D0%BF%D0%B5%D0%B9%D1%81%D1%8B/" />
+  <meta property="og:url" content="https://blog.sonicgd.ru/2017/10/04/interfaces/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="With no power comes no responsibility" />
 
   <meta name="generator" content="Hugo 0.29" />
-  <link rel="canonical" href="https://blog.sonicgd.ru/2017/02/22/%D0%BF%D1%80%D0%BE-%D0%BD%D0%B5%D0%B9%D0%BC%D1%81%D0%BF%D0%B5%D0%B9%D1%81%D1%8B/" />
+  <link rel="canonical" href="https://blog.sonicgd.ru/2017/10/04/interfaces/" />
   <link rel="alternate" href="https://blog.sonicgd.ru/index.xml" type="application/rss+xml" title="With no power comes no responsibility">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -187,11 +208,11 @@ use …">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="post-heading">
-              <h1>Про неймспейсы</h1>
+              <h1>Про интерфейсы</h1>
                 
                 
                   <span class="post-meta">
-  Posted on February 22, 2017
+  Posted on October 4, 2017
   
 </span>
 
@@ -210,20 +231,96 @@ use …">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p>Заметил, что очень нравится то, что в C# можно импортировать namespace целиком.</p>
-<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="s1f40">using My.Super.NameSpace;</span></code></pre>
+        <p>Реализация интефрейсов в C# тоже сделана не так прямолинейно как в PHP.</p>
+
+<p>Типичный интерфейс:</p>
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="s1f40">interface IFoo
+</span><span class="s1f40">{
+</span><span class="s1f40">    void Foo();
+</span><span class="s1f40">}</span></code></pre>
 </div>
-<p>В PHP, к сожалению, мы вынуждены импортировать каждый класс по отдельности.</p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="s1770">&lt;?php</span><span class="s1f40">
+<p>Обычная реализация выглядит так:</p>
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="s1f40">class Foo : IFoo
+</span><span class="s1f40">{
+</span><span class="s1f40">    public void Foo()
+</span><span class="s1f40">    {
+</span><span class="s1f40">      Console.WriteLine(&#34;Foo&#34;);
+</span><span class="s1f40">    }
+</span><span class="s1f40">}</span></code></pre>
+</div>
+<p>И мы можем использовать класс вот так:</p>
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="s1f40">var foo = new Foo();
+</span><span class="s1f40">foo.Foo(); //работает</span></code></pre>
+</div>
+<p>Совсем как PHP. Или нет?</p>
+
+<p>
+В примере мы создаём в классе публичный метод, который &ldquo;неявно&rdquo; реализует интерфейс. Но мы можем &ldquo;явно&rdquo; реализовать интерфейс вот таким образом</p>
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="s1f40">class Foo2 : IFoo
+</span><span class="s1f40">{
+</span><span class="s1f40">    void IFoo.Foo()
+</span><span class="s1f40">    {
+</span><span class="s1f40">        Console.WriteLine(&#34;Foo&#34;);
+</span><span class="s1f40">    }
+</span><span class="s1f40">}</span></code></pre>
+</div>
+<p>В этом случае, если мы попытаемся напрямую вызвать метод <code>Foo</code>, то мы словим ошибку, точнее код не скомпилируется, потому что у класса нет такого публичного метода</p>
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="s1f40">var foo2 = new Foo2();
+</span><span class="s1f40">foo2.Foo(); //ошибка</span></code></pre>
+</div>
+<p>Однако, если мы приведём объект к интерфейсу, то мы сможем вызвать у него этот метод</p>
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="s1f40">var foo2 = new Foo2();
+</span><span class="s1f40">((IFoo) foo2).Foo(); //Foo</span></code></pre>
+</div>
+<p>Но и это ещё не всё :) Мы можем объединить обе эти реализации</p>
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="s1f40">class AnotherFoo : IFoo
+</span><span class="s1f40">{
+</span><span class="s1f40">    public void Foo()
+</span><span class="s1f40">    {
+</span><span class="s1f40">        Console.WriteLine(&#34;Bar&#34;);
+</span><span class="s1f40">    }
+</span><span class="s1f40">    
+</span><span class="s1f40">    void IFoo.Foo()
+</span><span class="s1f40">    {
+</span><span class="s1f40">        Console.WriteLine(&#34;Foo&#34;);
+</span><span class="s1f40">    }
+</span><span class="s1f40">}</span></code></pre>
+</div>
+<p>И теперь написать такой код:</p>
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="s1f40">var anotherFoo = new AnotherFoo();
+</span><span class="s1f40">anotherFoo.Foo(); //Bar - потому что вызовется публичный метод класса
+</span><span class="s1f40">((IFoo) anotherFoo).Foo(); //Foo - потому что вызовется метод, реализующий интерфейс</span></code></pre>
+</div>
+<p>Ну и, конечно же, это работает с несколькими интерфейсами</p>
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="s1f40">interface IBaz
+</span><span class="s1f40">{
+</span><span class="s1f40">    void Foo();
+</span><span class="s1f40">}
 </span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s3e8">use</span><span class="s1f40"> </span><span class="s7df">my\super\namespace\Foo</span><span class="s1388">;</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s3e8">use</span><span class="s1f40"> </span><span class="s7df">my\super\namespace\Bar</span><span class="s1388">;</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s3e8">use</span><span class="s1f40"> </span><span class="s7df">my\super\namespace\FooBar</span><span class="s1388">;</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="sfa0">...</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s3e8">use</span><span class="s1f40"> </span><span class="s7df">my\super\namespace\FooBar83</span><span class="s1388">;</span></code></pre>
+</span><span class="s1f40">class Baz : IFoo, IBaz
+</span><span class="s1f40">{
+</span><span class="s1f40">    public void Foo()
+</span><span class="s1f40">    {
+</span><span class="s1f40">        Console.WriteLine(&#34;Bar&#34;);
+</span><span class="s1f40">    }
+</span><span class="s1f40">    
+</span><span class="s1f40">    void IFoo.Foo()
+</span><span class="s1f40">    {
+</span><span class="s1f40">        Console.WriteLine(&#34;Foo&#34;);
+</span><span class="s1f40">    }
+</span><span class="s1f40">    
+</span><span class="s1f40">    void IBaz.Foo()
+</span><span class="s1f40">    {
+</span><span class="s1f40">        Console.WriteLine(&#34;Baz&#34;);
+</span><span class="s1f40">    }
+</span><span class="s1f40">}</span></code></pre>
 </div>
-<p>В итоге имеем десятки импортов, которые можно было бы заменить одним.
-</p>
+<p>И использовать можно так:</p>
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="s1f40">var baz = new Baz();
+</span><span class="s1f40">baz.Foo(); //Bar
+</span><span class="s1f40">((IFoo) baz).Foo(); //Foo
+</span><span class="s1f40">((IBaz) baz).Foo(); //Baz</span></code></pre>
+</div>
       </article>
 
       <ul class="pager blog-pager">

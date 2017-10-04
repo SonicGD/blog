@@ -173,6 +173,49 @@
           
           
             <article class="post-preview">
+              <a href="https://blog.sonicgd.ru/2017/10/04/interfaces/">
+                <h2 class="post-title">Про интерфейсы</h2>
+                
+              </a>
+
+              <span class="post-meta">
+  Posted on October 4, 2017
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <p>Реализация интефрейсов в C# тоже сделана не так прямолинейно как в PHP.</p>
+
+<p>Типичный интерфейс:</p>
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="s1f40">interface IFoo
+</span><span class="s1f40">{
+</span><span class="s1f40">    void Foo();
+</span><span class="s1f40">}</span></code></pre>
+</div>
+<p>Обычная реализация выглядит так:</p>
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="s1f40">class Foo : IFoo
+</span><span class="s1f40">{
+</span><span class="s1f40">    public void Foo()
+</span><span class="s1f40">    {
+</span><span class="s1f40">      Console.WriteLine(&#34;Foo&#34;);
+</span><span class="s1f40">    }
+</span><span class="s1f40">}</span></code></pre>
+</div>
+<p>И мы можем использовать класс вот так:</p>
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="s1f40">var foo = new Foo();
+</span><span class="s1f40">foo.Foo(); //работает</span></code></pre>
+</div>
+<p>Совсем как PHP. Или нет?</p>
+                  <a href="https://blog.sonicgd.ru/2017/10/04/interfaces/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
               <a href="https://blog.sonicgd.ru/2017/10/03/polymorphism/">
                 <h2 class="post-title">Про полиморфизм</h2>
                 
@@ -348,7 +391,7 @@
         <ul class="list-inline text-center footer-links">
           
               <li>
-                <a href="https://plus.google.com/&#43;sonicgd" title="Google&#43;">
+                <a href="https://plus.google.com/&#43;%d0%93%d0%b5%d0%be%d1%80%d0%b3%d0%b8%d0%b9%d0%94%d1%80%d0%b0%d0%ba" title="Google&#43;">
                   <span class="fa-stack fa-lg">
                     <i class="fa fa-circle fa-stack-2x"></i>
                     <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>

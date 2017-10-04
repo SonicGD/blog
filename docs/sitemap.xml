@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://blog.sonicgd.ru/2017/10/04/interfaces/</loc>
+    <lastmod>2017-10-04T17:39:21+05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.sonicgd.ru/2017/10/03/polymorphism/</loc>
     <lastmod>2017-10-03T15:30:15+05:00</lastmod>
   </url>
@@ -42,7 +47,7 @@
   
   <url>
     <loc>https://blog.sonicgd.ru/categories/php-vs-c#/</loc>
-    <lastmod>2017-10-03T15:30:15+05:00</lastmod>
+    <lastmod>2017-10-04T17:39:21+05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -54,7 +59,7 @@
   
   <url>
     <loc>https://blog.sonicgd.ru/</loc>
-    <lastmod>2017-10-03T15:30:15+05:00</lastmod>
+    <lastmod>2017-10-04T17:39:21+05:00</lastmod>
     <priority>0</priority>
   </url>
   
