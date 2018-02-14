@@ -1,4 +1,4 @@
-baseURL = "https://blog.sonicgd.ru"
+baseURL = "https://blog.sonicgd.ru/"
 languageCode = "ru-ru"
 title = "With no power comes no responsibility"
 pygmentsCodeFences = true
