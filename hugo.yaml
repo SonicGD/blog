@@ -6,6 +6,8 @@ languageName: 'ru'
 defaultContentLanguage: "ru"
 
 params:
+  logo: "logo.png"
+  favicon: "favicon.ico"
   author:
     name: "SonicGD"
     website: "https://blog.sonicgd.ru"
