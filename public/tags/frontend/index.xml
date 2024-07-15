@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Frontend on With no power comes no responsibility</title>
+    <link>http://localhost:1313/tags/frontend/</link>
+    <description>Recent content in Frontend on With no power comes no responsibility</description>
+    <generator>Hugo</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Wed, 14 Feb 2018 14:59:17 +0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/frontend/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blazor: Техническое введение</title>
+      <link>http://localhost:1313/2018/02/14/blazor/</link>
+      <pubDate>Wed, 14 Feb 2018 14:59:17 +0500</pubDate>
+      <guid>http://localhost:1313/2018/02/14/blazor/</guid>
+      <description>Сделал для Хабра перевод технических подробностей о Blazor.&#xA;Blazor это такой сишарповый SPA-фреймворк. .NET в браузере. Чудеса да и только.</description>
+    </item>
+  </channel>
+</rss>

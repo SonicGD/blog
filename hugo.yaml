@@ -1,0 +1,24 @@
+baseURL: 'https://blog.sonicgd.ru/'
+languageCode: 'ru-ru'
+title: 'With no power comes no responsibility'
+theme: "beautifulhugo"
+languageName: 'ru'
+defaultContentLanguage: "ru"
+
+params:
+  author:
+    name: "SonicGD"
+    website: "https://blog.sonicgd.ru"
+    github: "sonicgd"
+    gitlab: "sonicgd"
+    twitter: "sonicbw"
+    reddit: "sonicgd"
+
+menus:
+  main:
+  - name: Blog
+    pageRef: /
+    weight: 10
+  - name: Tags
+    pageRef: /tags
+    weight: 20
