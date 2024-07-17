@@ -1,20 +1,20 @@
 baseURL: 'https://blog.sonicgd.ru/'
 languageCode: 'ru-ru'
-title: 'With no power comes no responsibility'
+title: "Синий Йож"
 theme: "beautifulhugo"
 languageName: 'ru'
 defaultContentLanguage: "ru"
 
 params:
-  logo: "logo.png"
-  favicon: "favicon.ico"
+  logo: "/logo.png"
+  favicon: "/favicon.ico"
+  homeTitle: "Синий Йож"
   author:
     name: "SonicGD"
     website: "https://blog.sonicgd.ru"
     github: "sonicgd"
     gitlab: "sonicgd"
     twitter: "sonicbw"
-    reddit: "sonicgd"
 
 menus:
   main:
