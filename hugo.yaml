@@ -24,3 +24,7 @@ menus:
   - name: Tags
     pageRef: /tags
     weight: 20
+
+permalinks:
+  page:
+    posts: /posts/:year/:month/:slug/
