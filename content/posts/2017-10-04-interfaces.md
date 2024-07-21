@@ -1,9 +1,6 @@
 ---
 title: "Про интерфейсы"
 date: 2017-10-04T17:39:21+05:00
-url: /2017/10/04/interfaces/
-author: sonicgd
-type: post
 categories:
   - 'PHP vs C#'
 ---

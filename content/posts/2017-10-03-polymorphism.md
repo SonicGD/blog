@@ -1,9 +1,6 @@
 ---
 title: "Про полиморфизм"
 date: 2017-10-03T15:30:15+05:00
-url: /2017/10/03/polymorphism/
-author: sonicgd
-type: post
 categories:
   - 'PHP vs C#'
 ---
