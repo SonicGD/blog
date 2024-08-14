@@ -9,6 +9,8 @@ params:
   logo: "/logo.png"
   favicon: "/favicon.ico"
   homeTitle: "Синий Йож"
+  custom_css: 
+    - "css/custom_style.css"
   author:
     name: "SonicGD"
     website: "https://blog.sonicgd.ru"
